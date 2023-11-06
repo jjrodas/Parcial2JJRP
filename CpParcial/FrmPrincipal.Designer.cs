@@ -30,6 +30,8 @@
         {
             this.lblPrincipal = new System.Windows.Forms.Label();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
+            this.dtpFechaEstreno = new System.Windows.Forms.DateTimePicker();
+            this.txtDirector = new System.Windows.Forms.TextBox();
             this.lblFechaEstreno = new System.Windows.Forms.Label();
             this.nudDuracion = new System.Windows.Forms.NumericUpDown();
             this.lblDuracion = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
-            this.txtDirector = new System.Windows.Forms.TextBox();
-            this.dtpFechaEstreno = new System.Windows.Forms.DateTimePicker();
             this.gbxDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDuracion)).BeginInit();
             this.pnlAcciones.SuspendLayout();
@@ -84,12 +84,27 @@
             this.gbxDatos.Controls.Add(this.btnCancelar);
             this.gbxDatos.Controls.Add(this.btnGuardar);
             this.gbxDatos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxDatos.Location = new System.Drawing.Point(70, 366);
+            this.gbxDatos.Location = new System.Drawing.Point(69, 379);
             this.gbxDatos.Name = "gbxDatos";
             this.gbxDatos.Size = new System.Drawing.Size(790, 141);
             this.gbxDatos.TabIndex = 13;
             this.gbxDatos.TabStop = false;
             this.gbxDatos.Text = "Datos de la Serie";
+            // 
+            // dtpFechaEstreno
+            // 
+            this.dtpFechaEstreno.Location = new System.Drawing.Point(488, 54);
+            this.dtpFechaEstreno.Name = "dtpFechaEstreno";
+            this.dtpFechaEstreno.Size = new System.Drawing.Size(200, 26);
+            this.dtpFechaEstreno.TabIndex = 23;
+            // 
+            // txtDirector
+            // 
+            this.txtDirector.Location = new System.Drawing.Point(140, 89);
+            this.txtDirector.MaxLength = 250;
+            this.txtDirector.Name = "txtDirector";
+            this.txtDirector.Size = new System.Drawing.Size(184, 26);
+            this.txtDirector.TabIndex = 22;
             // 
             // lblFechaEstreno
             // 
@@ -171,6 +186,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -206,6 +222,7 @@
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnEliminar
             // 
@@ -219,6 +236,7 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -232,6 +250,7 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -244,6 +263,7 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // gbxLista
             // 
@@ -263,7 +283,7 @@
             this.dgvListaSeries.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvListaSeries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaSeries.Location = new System.Drawing.Point(7, 22);
-            this.dgvListaSeries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvListaSeries.Margin = new System.Windows.Forms.Padding(4);
             this.dgvListaSeries.MultiSelect = false;
             this.dgvListaSeries.Name = "dgvListaSeries";
             this.dgvListaSeries.ReadOnly = true;
@@ -282,6 +302,7 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // lblBusqueda
             // 
@@ -301,21 +322,6 @@
             this.txtParametro.TabIndex = 8;
             this.txtParametro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParametro_KeyPress);
             // 
-            // txtDirector
-            // 
-            this.txtDirector.Location = new System.Drawing.Point(140, 89);
-            this.txtDirector.MaxLength = 250;
-            this.txtDirector.Name = "txtDirector";
-            this.txtDirector.Size = new System.Drawing.Size(184, 26);
-            this.txtDirector.TabIndex = 22;
-            // 
-            // dtpFechaEstreno
-            // 
-            this.dtpFechaEstreno.Location = new System.Drawing.Point(488, 54);
-            this.dtpFechaEstreno.Name = "dtpFechaEstreno";
-            this.dtpFechaEstreno.Size = new System.Drawing.Size(200, 26);
-            this.dtpFechaEstreno.TabIndex = 23;
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -334,6 +340,7 @@
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "::: Parcial2 - Juan José Rodas Paco :::";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.gbxDatos.ResumeLayout(false);
             this.gbxDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDuracion)).EndInit();

@@ -1,4 +1,5 @@
-﻿using ClnParcial2;
+﻿using CadParcial2;
+using ClnParcial2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +34,7 @@ namespace CpParcial
             dgvListaSeries.Columns["usuarioRegistro"].HeaderText = "Usuario";
             btnEditar.Enabled = series.Count > 0;
             btnEliminar.Enabled = series.Count > 0;
-            if (series.Count > 0) dgvListaSeries.Rows[0].Cells["titulo "].Selected = true;
+            if (series.Count > 0) dgvListaSeries.Rows[0].Cells["titulo"].Selected = true;
         }
 
         private void txtParametro_KeyPress(object sender, KeyPressEventArgs e)
@@ -108,6 +109,33 @@ namespace CpParcial
                 MessageBox.Show("Serie dada de baja correctamente", "::: Parcial2 Juan José Rodas Paco - Mensaje :::",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            var serie = new Serie();
+            serie.titulo= txtTitulo.Text.Trim();
+            serie.sinopsis = txtSinopsis.Text.Trim();
+            serie.director = txtDirector.Text.Trim();
+            serie.duracion = (int)nudDuracion.Value;
+            serie.fechaEstreno= dtpFechaEstreno.Value;
+            serie.usuarioRegistro = "Parcial2JJRP";
+
+            if (esNuevo)
+            {
+                serie.estado = 1;
+                SerieCln.insertar(serie);
+            }
+            else
+            {
+                int index = dgvListaSeries.CurrentCell.RowIndex;
+                serie.id = Convert.ToInt32(dgvListaSeries.Rows[index].Cells["id"].Value);
+                SerieCln.actualizar(serie);
+            }
+            listar();
+            btnCancelar.PerformClick();
+            MessageBox.Show("Serie guardada correctamente", "::: Parcial2 Juan José Rodas Paco - Mensaje :::",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

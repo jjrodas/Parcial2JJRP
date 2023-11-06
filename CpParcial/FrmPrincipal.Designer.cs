@@ -30,6 +30,8 @@
         {
             this.lblPrincipal = new System.Windows.Forms.Label();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
+            this.txtSinopsis = new System.Windows.Forms.TextBox();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
             this.dtpFechaEstreno = new System.Windows.Forms.DateTimePicker();
             this.txtDirector = new System.Windows.Forms.TextBox();
             this.lblFechaEstreno = new System.Windows.Forms.Label();
@@ -38,20 +40,18 @@
             this.lblDirector = new System.Windows.Forms.Label();
             this.lblSinopsis = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.pnlAcciones = new System.Windows.Forms.Panel();
-            this.gbxLista = new System.Windows.Forms.GroupBox();
-            this.dgvListaSeries = new System.Windows.Forms.DataGridView();
-            this.lblBusqueda = new System.Windows.Forms.Label();
-            this.txtParametro = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.pnlAcciones = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.gbxLista = new System.Windows.Forms.GroupBox();
+            this.dgvListaSeries = new System.Windows.Forms.DataGridView();
+            this.lblBusqueda = new System.Windows.Forms.Label();
+            this.txtParametro = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.txtSinopsis = new System.Windows.Forms.TextBox();
             this.gbxDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDuracion)).BeginInit();
             this.pnlAcciones.SuspendLayout();
@@ -90,6 +90,22 @@
             this.gbxDatos.TabIndex = 13;
             this.gbxDatos.TabStop = false;
             this.gbxDatos.Text = "Datos de la Serie";
+            // 
+            // txtSinopsis
+            // 
+            this.txtSinopsis.Location = new System.Drawing.Point(140, 53);
+            this.txtSinopsis.MaxLength = 250;
+            this.txtSinopsis.Name = "txtSinopsis";
+            this.txtSinopsis.Size = new System.Drawing.Size(184, 26);
+            this.txtSinopsis.TabIndex = 25;
+            // 
+            // txtTitulo
+            // 
+            this.txtTitulo.Location = new System.Drawing.Point(140, 15);
+            this.txtTitulo.MaxLength = 250;
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(184, 26);
+            this.txtTitulo.TabIndex = 24;
             // 
             // dtpFechaEstreno
             // 
@@ -158,61 +174,6 @@
             this.lblTitulo.TabIndex = 8;
             this.lblTitulo.Text = "Título:";
             // 
-            // pnlAcciones
-            // 
-            this.pnlAcciones.Controls.Add(this.btnCerrar);
-            this.pnlAcciones.Controls.Add(this.btnEliminar);
-            this.pnlAcciones.Controls.Add(this.btnEditar);
-            this.pnlAcciones.Controls.Add(this.btnNuevo);
-            this.pnlAcciones.Location = new System.Drawing.Point(70, 312);
-            this.pnlAcciones.Name = "pnlAcciones";
-            this.pnlAcciones.Size = new System.Drawing.Size(789, 48);
-            this.pnlAcciones.TabIndex = 12;
-            // 
-            // gbxLista
-            // 
-            this.gbxLista.Controls.Add(this.dgvListaSeries);
-            this.gbxLista.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxLista.Location = new System.Drawing.Point(71, 116);
-            this.gbxLista.Name = "gbxLista";
-            this.gbxLista.Size = new System.Drawing.Size(790, 190);
-            this.gbxLista.TabIndex = 11;
-            this.gbxLista.TabStop = false;
-            this.gbxLista.Text = "Lista de Series";
-            // 
-            // dgvListaSeries
-            // 
-            this.dgvListaSeries.AllowUserToAddRows = false;
-            this.dgvListaSeries.AllowUserToDeleteRows = false;
-            this.dgvListaSeries.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvListaSeries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaSeries.Location = new System.Drawing.Point(7, 22);
-            this.dgvListaSeries.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvListaSeries.MultiSelect = false;
-            this.dgvListaSeries.Name = "dgvListaSeries";
-            this.dgvListaSeries.ReadOnly = true;
-            this.dgvListaSeries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaSeries.Size = new System.Drawing.Size(776, 161);
-            this.dgvListaSeries.TabIndex = 0;
-            // 
-            // lblBusqueda
-            // 
-            this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBusqueda.Location = new System.Drawing.Point(71, 61);
-            this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(177, 19);
-            this.lblBusqueda.TabIndex = 9;
-            this.lblBusqueda.Text = "Buscar por título de la Serie";
-            // 
-            // txtParametro
-            // 
-            this.txtParametro.Location = new System.Drawing.Point(71, 80);
-            this.txtParametro.Name = "txtParametro";
-            this.txtParametro.Size = new System.Drawing.Size(688, 22);
-            this.txtParametro.TabIndex = 8;
-            this.txtParametro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParametro_KeyPress);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,6 +200,18 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // pnlAcciones
+            // 
+            this.pnlAcciones.Controls.Add(this.btnCerrar);
+            this.pnlAcciones.Controls.Add(this.btnEliminar);
+            this.pnlAcciones.Controls.Add(this.btnEditar);
+            this.pnlAcciones.Controls.Add(this.btnNuevo);
+            this.pnlAcciones.Location = new System.Drawing.Point(70, 312);
+            this.pnlAcciones.Name = "pnlAcciones";
+            this.pnlAcciones.Size = new System.Drawing.Size(789, 48);
+            this.pnlAcciones.TabIndex = 12;
             // 
             // btnCerrar
             // 
@@ -298,6 +271,50 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // gbxLista
+            // 
+            this.gbxLista.Controls.Add(this.dgvListaSeries);
+            this.gbxLista.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbxLista.Location = new System.Drawing.Point(71, 116);
+            this.gbxLista.Name = "gbxLista";
+            this.gbxLista.Size = new System.Drawing.Size(790, 190);
+            this.gbxLista.TabIndex = 11;
+            this.gbxLista.TabStop = false;
+            this.gbxLista.Text = "Lista de Series";
+            // 
+            // dgvListaSeries
+            // 
+            this.dgvListaSeries.AllowUserToAddRows = false;
+            this.dgvListaSeries.AllowUserToDeleteRows = false;
+            this.dgvListaSeries.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvListaSeries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaSeries.Location = new System.Drawing.Point(7, 22);
+            this.dgvListaSeries.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvListaSeries.MultiSelect = false;
+            this.dgvListaSeries.Name = "dgvListaSeries";
+            this.dgvListaSeries.ReadOnly = true;
+            this.dgvListaSeries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListaSeries.Size = new System.Drawing.Size(776, 161);
+            this.dgvListaSeries.TabIndex = 0;
+            // 
+            // lblBusqueda
+            // 
+            this.lblBusqueda.AutoSize = true;
+            this.lblBusqueda.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBusqueda.Location = new System.Drawing.Point(71, 61);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(177, 19);
+            this.lblBusqueda.TabIndex = 9;
+            this.lblBusqueda.Text = "Buscar por título de la Serie";
+            // 
+            // txtParametro
+            // 
+            this.txtParametro.Location = new System.Drawing.Point(71, 80);
+            this.txtParametro.Name = "txtParametro";
+            this.txtParametro.Size = new System.Drawing.Size(688, 22);
+            this.txtParametro.TabIndex = 8;
+            this.txtParametro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParametro_KeyPress);
+            // 
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -311,22 +328,6 @@
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // txtTitulo
-            // 
-            this.txtTitulo.Location = new System.Drawing.Point(140, 15);
-            this.txtTitulo.MaxLength = 250;
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(184, 26);
-            this.txtTitulo.TabIndex = 24;
-            // 
-            // txtSinopsis
-            // 
-            this.txtSinopsis.Location = new System.Drawing.Point(140, 53);
-            this.txtSinopsis.MaxLength = 250;
-            this.txtSinopsis.Name = "txtSinopsis";
-            this.txtSinopsis.Size = new System.Drawing.Size(184, 26);
-            this.txtSinopsis.TabIndex = 25;
             // 
             // FrmPrincipal
             // 

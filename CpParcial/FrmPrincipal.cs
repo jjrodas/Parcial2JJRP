@@ -113,29 +113,73 @@ namespace CpParcial
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            var serie = new Serie();
-            serie.titulo= txtTitulo.Text.Trim();
-            serie.sinopsis = txtSinopsis.Text.Trim();
-            serie.director = txtDirector.Text.Trim();
-            serie.duracion = (int)nudDuracion.Value;
-            serie.fechaEstreno= dtpFechaEstreno.Value;
-            serie.usuarioRegistro = "Parcial2JJRP";
+            if (validar())
+            {
+                var serie = new Serie();
+                serie.titulo = txtTitulo.Text.Trim();
+                serie.sinopsis = txtSinopsis.Text.Trim();
+                serie.director = txtDirector.Text.Trim();
+                serie.duracion = (int)nudDuracion.Value;
+                serie.fechaEstreno = dtpFechaEstreno.Value;
+                serie.usuarioRegistro = "Parcial2JJRP";
 
-            if (esNuevo)
-            {
-                serie.estado = 1;
-                SerieCln.insertar(serie);
+                if (esNuevo)
+                {
+                    serie.estado = 1;
+                    SerieCln.insertar(serie);
+                }
+                else
+                {
+                    int index = dgvListaSeries.CurrentCell.RowIndex;
+                    serie.id = Convert.ToInt32(dgvListaSeries.Rows[index].Cells["id"].Value);
+                    SerieCln.actualizar(serie);
+                }
+                listar();
+                btnCancelar.PerformClick();
+                MessageBox.Show("Serie guardada correctamente", "::: Parcial2 Juan José Rodas Paco - Mensaje :::",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
+        }
+
+        private bool validar()
+        {
+            bool esValido = true;
+            erpTitulo.SetError(txtTitulo, "");
+            erpSinopsis.SetError(txtSinopsis, "");
+            erpDirector.SetError(txtDirector, "");
+            erpDuracion.SetError(nudDuracion, "");
+            erpFechaEstreno.SetError(dtpFechaEstreno, "");
+            if (string.IsNullOrEmpty(txtTitulo.Text))
             {
-                int index = dgvListaSeries.CurrentCell.RowIndex;
-                serie.id = Convert.ToInt32(dgvListaSeries.Rows[index].Cells["id"].Value);
-                SerieCln.actualizar(serie);
+                esValido = false;
+                erpTitulo.SetError(txtTitulo, "El campo título es obligatorio.");
             }
-            listar();
-            btnCancelar.PerformClick();
-            MessageBox.Show("Serie guardada correctamente", "::: Parcial2 Juan José Rodas Paco - Mensaje :::",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (string.IsNullOrEmpty(txtSinopsis.Text))
+            {
+                esValido = false;
+                erpSinopsis.SetError(txtSinopsis, "El campo sinopsis es obligatorio.");
+            }
+            if (string.IsNullOrEmpty(txtDirector.Text))
+            {
+                esValido = false;
+                erpDirector.SetError(txtDirector, "El campo director es obligatorio.");
+            }
+            if (string.IsNullOrEmpty(nudDuracion.Text))
+            {
+                esValido = false;
+                erpDuracion.SetError(nudDuracion, "El campo duración es obligatorio.");
+            }
+            if (nudDuracion.Value < 0)
+            {
+                esValido = false;
+                erpDuracion.SetError(nudDuracion, "El campo duración debe ser mayor o igual a 0.");
+            }
+            if (string.IsNullOrEmpty(dtpFechaEstreno.Text))
+            {
+                esValido = false;
+                erpFechaEstreno.SetError(dtpFechaEstreno, "El campo fecha de estreno es obligatorio.");
+            }
+            return esValido;
         }
     }
 }

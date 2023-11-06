@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblPrincipal = new System.Windows.Forms.Label();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
             this.txtSinopsis = new System.Windows.Forms.TextBox();
@@ -52,11 +53,21 @@
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.erpTitulo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpSinopsis = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpDirector = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpDuracion = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpFechaEstreno = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbxDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDuracion)).BeginInit();
             this.pnlAcciones.SuspendLayout();
             this.gbxLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaSeries)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpTitulo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpSinopsis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDirector)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDuracion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpFechaEstreno)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPrincipal
@@ -275,9 +286,9 @@
             // 
             this.gbxLista.Controls.Add(this.dgvListaSeries);
             this.gbxLista.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxLista.Location = new System.Drawing.Point(71, 116);
+            this.gbxLista.Location = new System.Drawing.Point(71, 82);
             this.gbxLista.Name = "gbxLista";
-            this.gbxLista.Size = new System.Drawing.Size(790, 190);
+            this.gbxLista.Size = new System.Drawing.Size(790, 224);
             this.gbxLista.TabIndex = 11;
             this.gbxLista.TabStop = false;
             this.gbxLista.Text = "Lista de Series";
@@ -294,14 +305,14 @@
             this.dgvListaSeries.Name = "dgvListaSeries";
             this.dgvListaSeries.ReadOnly = true;
             this.dgvListaSeries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaSeries.Size = new System.Drawing.Size(776, 161);
+            this.dgvListaSeries.Size = new System.Drawing.Size(776, 195);
             this.dgvListaSeries.TabIndex = 0;
             // 
             // lblBusqueda
             // 
             this.lblBusqueda.AutoSize = true;
             this.lblBusqueda.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBusqueda.Location = new System.Drawing.Point(71, 61);
+            this.lblBusqueda.Location = new System.Drawing.Point(71, 35);
             this.lblBusqueda.Name = "lblBusqueda";
             this.lblBusqueda.Size = new System.Drawing.Size(177, 19);
             this.lblBusqueda.TabIndex = 9;
@@ -309,7 +320,7 @@
             // 
             // txtParametro
             // 
-            this.txtParametro.Location = new System.Drawing.Point(71, 80);
+            this.txtParametro.Location = new System.Drawing.Point(71, 54);
             this.txtParametro.Name = "txtParametro";
             this.txtParametro.Size = new System.Drawing.Size(688, 22);
             this.txtParametro.TabIndex = 8;
@@ -320,7 +331,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = global::CpParcial.Properties.Resources.icons8_buscar_32;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(770, 68);
+            this.btnBuscar.Location = new System.Drawing.Point(770, 42);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(91, 42);
             this.btnBuscar.TabIndex = 10;
@@ -328,6 +339,26 @@
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // erpTitulo
+            // 
+            this.erpTitulo.ContainerControl = this;
+            // 
+            // erpSinopsis
+            // 
+            this.erpSinopsis.ContainerControl = this;
+            // 
+            // erpDirector
+            // 
+            this.erpDirector.ContainerControl = this;
+            // 
+            // erpDuracion
+            // 
+            this.erpDuracion.ContainerControl = this;
+            // 
+            // erpFechaEstreno
+            // 
+            this.erpFechaEstreno.ContainerControl = this;
             // 
             // FrmPrincipal
             // 
@@ -354,6 +385,11 @@
             this.pnlAcciones.ResumeLayout(false);
             this.gbxLista.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaSeries)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpTitulo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpSinopsis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDirector)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDuracion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpFechaEstreno)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,6 +421,11 @@
         private System.Windows.Forms.TextBox txtParametro;
         private System.Windows.Forms.TextBox txtSinopsis;
         private System.Windows.Forms.TextBox txtTitulo;
+        private System.Windows.Forms.ErrorProvider erpTitulo;
+        private System.Windows.Forms.ErrorProvider erpSinopsis;
+        private System.Windows.Forms.ErrorProvider erpDirector;
+        private System.Windows.Forms.ErrorProvider erpDuracion;
+        private System.Windows.Forms.ErrorProvider erpFechaEstreno;
     }
 }
 

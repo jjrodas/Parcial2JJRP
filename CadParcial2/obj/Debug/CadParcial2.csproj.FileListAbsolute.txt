@@ -1,0 +1,12 @@
+D:\Clases\SIS-457\Parcial2\Parcial2JJRP\CadParcial2\bin\Debug\CadParcial2.dll.config
+D:\Clases\SIS-457\Parcial2\Parcial2JJRP\CadParcial2\bin\Debug\CadParcial2.dll
+D:\Clases\SIS-457\Parcial2\Parcial2JJRP\CadParcial2\bin\Debug\CadParcial2.pdb
+D:\Clases\SIS-457\Parcial2\Parcial2JJRP\CadParcial2\bin\Debug\EntityFramework.dll
+D:\Clases\SIS-457\Parcial2\Parcial2JJRP\CadParcial2\bin\Debug\EntityFramework.SqlServer.dll
+D:\Clases\SIS-457\Parcial2\Parcial2JJRP\CadParcial2\bin\Debug\EntityFramework.xml
+D:\Clases\SIS-457\Parcial2\Parcial2JJRP\CadParcial2\bin\Debug\EntityFramework.SqlServer.xml
+D:\Clases\SIS-457\Parcial2\Parcial2JJRP\CadParcial2\obj\Debug\CadParcial2.csproj.AssemblyReference.cache
+D:\Clases\SIS-457\Parcial2\Parcial2JJRP\CadParcial2\obj\Debug\CadParcial2.csproj.CoreCompileInputs.cache
+D:\Clases\SIS-457\Parcial2\Parcial2JJRP\CadParcial2\obj\Debug\CadParcial2.csproj.CopyComplete
+D:\Clases\SIS-457\Parcial2\Parcial2JJRP\CadParcial2\obj\Debug\CadParcial2.dll
+D:\Clases\SIS-457\Parcial2\Parcial2JJRP\CadParcial2\obj\Debug\CadParcial2.pdb

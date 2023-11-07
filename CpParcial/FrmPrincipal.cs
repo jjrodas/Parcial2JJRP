@@ -29,7 +29,7 @@ namespace CpParcial
             dgvListaSeries.Columns["titulo"].HeaderText = "Título";
             dgvListaSeries.Columns["sinopsis"].HeaderText = "Sinopsis";
             dgvListaSeries.Columns["director"].HeaderText = "Director";
-            dgvListaSeries.Columns["duracion"].HeaderText = "Duración";
+            dgvListaSeries.Columns["duracion"].HeaderText = "Duración (cantidad de episodios)";
             dgvListaSeries.Columns["fechaEstreno"].HeaderText = "Fecha de Estreno";
             dgvListaSeries.Columns["usuarioRegistro"].HeaderText = "Usuario";
             btnEditar.Enabled = series.Count > 0;
@@ -92,7 +92,6 @@ namespace CpParcial
             txtSinopsis.Text = string.Empty;
             txtDirector.Text = string.Empty;
             nudDuracion.Value = 0;
-            //dtpFechaEstreno.Value = 0;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -172,12 +171,17 @@ namespace CpParcial
             if (nudDuracion.Value < 0)
             {
                 esValido = false;
-                erpDuracion.SetError(nudDuracion, "El campo duración debe ser mayor o igual a 0.");
+                erpDuracion.SetError(nudDuracion, "El número de episodios o capítulos debe ser mayor a 0.");
             }
             if (string.IsNullOrEmpty(dtpFechaEstreno.Text))
             {
                 esValido = false;
                 erpFechaEstreno.SetError(dtpFechaEstreno, "El campo fecha de estreno es obligatorio.");
+            }
+            if (dtpFechaEstreno.Value > DateTime.Now)
+            {
+                esValido = false;
+                erpFechaEstreno.SetError(dtpFechaEstreno, "La fecha de estreno no debe ser mayor que la fecha actual.");
             }
             return esValido;
         }
